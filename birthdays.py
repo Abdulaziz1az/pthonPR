@@ -42,3 +42,22 @@ def get_menu_choice():
     while choice < LOOK_UP or choice > QUIT:
         choice = int (input("Enter a valid choice: "))
     return choice
+
+    # function looks up a name in the birthdays 
+    def look_up(birthdays):
+        name = input(" Enter a name: ")
+        # Look it iup in the dictinary
+        print(birthdays.get(name, 'Not found.'))
+
+    # The add function adds a new entry into the birthdays dictionary
+    def add(birthdays):
+        # Get a name and birthday
+        name = input("Enter a name: ")
+        bday = input("Enter a birthday: ")
+
+        # if the name does not exist, add it.
+        if name not in birthdays:
+            brithdays[name] = bday
+        else:
+            print("That enntry alread exists.")
+        
