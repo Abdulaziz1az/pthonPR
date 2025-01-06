@@ -47,7 +47,7 @@ def get_menu_choice():
     def look_up(birthdays):
         name = input(" Enter a name: ")
         # Look it iup in the dictinary
-        print(birthdays.getvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv(name, 'Not found.'))
+        print(birthdays.get(name, 'Not found.'))
 
     # The add function adds a new entry into the birthdays dictionary
     def add(birthdays):
@@ -72,3 +72,16 @@ def get_menu_choice():
             birthday[name] = bday
         else:
             print("The name is not found.")
+
+        # This function  deletes an entrty fro the bithday dictionary 
+        def delet(brithday):
+            # Get a name to look up.
+            name = input("Enter a name")
+            
+            if name in brithdays:
+                del brithdays[name]
+            else:
+                print("That name is not found.")
+
+# Call the main function.
+main()
