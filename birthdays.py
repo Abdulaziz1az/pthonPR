@@ -21,7 +21,7 @@ def main():
         elif choice == CHANGE:
             change(birthdays)
         elif choice == DELETE:
-            delete(birthdays)
+            delet(birthdays)
 
 # get menu choice from the user
 def get_menu_choice():
@@ -44,44 +44,44 @@ def get_menu_choice():
     return choice
 
     # function looks up a name in the birthdays 
-    def look_up(birthdays):
-        name = input(" Enter a name: ")
-        # Look it iup in the dictinary
-        print(birthdays.get(name, 'Not found.'))
+def look_up(brithdays):
+    name = input(" Enter a name: ")
+    # Look it iup in the dictinary
+    print(brithdays.get(name, 'Not found.'))
 
-    # The add function adds a new entry into the birthdays dictionary
-    def add(birthdays):
-        # Get a name and birthday
-        name = input("Enter a name: ")
-        bday = input("Enter a birthday: ")
+# The add function adds a new entry into the birthdays dictionary
+def add(brithdays):
+    # Get a name and birthday
+    name = input("Enter a name: ")
+    bday = input("Enter a birthday: ")
 
-        # if the name does not exist, add it.
-        if name not in birthdays:
-            brithdays[name] = bday
-        else:
-            print("That enntry alread exists.")
+    # if the name does not exist, add it.
+    if name not in brithdays:
+        brithdays[name] = bday
+    else:
+        print("That enntry alread exists.")
+
+# change fuunction changes an existing entry in the birthdays dictionary
+def change(brithdays):
+    # Get a name to look up
+    name = input("Enter a name: ")
+    if name in brithdays:
+        # Get a new birthday.
+        bday = input("Enter the new birthday: ")
+        # Update the entry
+        brithdays[name] = bday
+    else:
+        print("The name is not found.")
+
+    # This function  deletes an entrty fro the bithday dictionary 
+def delet(brithdays):
+    # Get a name to look up.
+    name = input("Enter a name: ")
     
-    # change fuunction changes an existing entry in the birthdays dictionary
-    def change(birthdays):
-        # Get a name to look up
-        name = input("Enter a name: ")
-        if name in birthdays:
-            # Get a new birthday.
-            bday = input("Enter the new birthday: ")
-            # Update the entry
-            birthday[name] = bday
-        else:
-            print("The name is not found.")
-
-        # This function  deletes an entrty fro the bithday dictionary 
-        def delet(brithday):
-            # Get a name to look up.
-            name = input("Enter a name")
-            
-            if name in brithdays:
-                del brithdays[name]
-            else:
-                print("That name is not found.")
+    if name in brithdays:
+        del brithdays[name]
+    else:
+        print("That name is not found.")
 
 # Call the main function.
 main()
